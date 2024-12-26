@@ -29,12 +29,7 @@ const BookingModal = ({
     checkOutDate || ""
   );
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [showAmenities, setShowAmenities] = useState(false);
 
-  const toggleAmenitiesVisibility = () => {
-    setShowAmenities((prev) => !prev);
-  };
-  
 
   const getTodayDate = () => {
     const today = new Date();
