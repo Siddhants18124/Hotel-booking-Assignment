@@ -138,7 +138,7 @@ const BookingModal = ({
 
             {/* Persons Info */}
             <div className="persons-info">
-              <FaUsers className="icon" />
+              <FaUsers className="user-icon" />
               <span>{guestCount} Person(s)</span>
             </div>
 
@@ -178,7 +178,6 @@ const BookingModal = ({
                   type="text"
                   value={currentCheckOutDate}
                   placeholder="Check-Out"
-                  min={getTodayDate()} 
                   onFocus={(e) => (e.target.type = "date")}
                   onBlur={(e) => (e.target.type = "text")}
                   onChange={(e) => setCurrentCheckOutDate(e.target.value)}

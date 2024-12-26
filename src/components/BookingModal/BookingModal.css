@@ -145,15 +145,15 @@
   align-items: center;
   width: 50%;
   border: 1px solid #ccc;
-  padding: 3px; /* Reduced padding */
+  padding: 3px; 
 }
 
 .gender-option {
   flex: 1;
   text-align: center;
-  padding: 4px; /* Reduced padding */
+  padding: 4px; 
   cursor: pointer;
-  font-size: 14px; /* Adjust font size */
+  font-size: 14px; 
 }
 
 .gender-option.selected {
@@ -164,9 +164,9 @@
 /* Age Input */
 .age-input {
   width: 40%;
-  padding: 8px; /* Reduced padding */
+  padding: 8px; 
   border: 1px solid #ccc;
-  font-size: 14px; /* Adjust font size */
+  font-size: 14px;
 }
 .age-gender-row{
   display: flex;
@@ -177,9 +177,9 @@
 /* Name Input */
 .name-input {
   width: 90%;
-  padding: 8px; /* Match reduced padding */
+  padding: 8px; 
   border: 1px solid #ccc;
-  font-size: 14px; /* Adjust font size */
+  font-size: 14px;
   margin-bottom: 4%;
 }
 /* Buttons */

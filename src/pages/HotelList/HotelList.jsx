@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Filters from "../Filters/Filters";
-import HotelCard from "../HotelCard/HotelCard";
-import Pagination from "../Pagination/Pagination";
-import HeroSection from "../Hero/Hero";
+import Filters from "../../components/Filters/Filters";
+import HotelCard from "../../components/HotelCard/HotelCard";
+import Pagination from "../../components/Pagination/Pagination";
+import Hero from "../../components/Hero/Hero";
 import "./HotelList.css";
+import Navbar from "../../components/Navbar/Navbar";
 
 const HotelList = () => {
   const [allHotels, setAllHotels] = useState([]); // All hotels fetched
@@ -80,7 +81,8 @@ const HotelList = () => {
 
   return (
     <div>
-      <HeroSection />
+      <Navbar />
+      <Hero />
       <div className="hotel-list">
         <aside className="filters-section">
           <Filters onFilterChange={applyFilters} />

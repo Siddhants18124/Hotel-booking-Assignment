@@ -20,18 +20,18 @@ const Navbar = () => {
             {/* Desktop Menu */}
             <ul className="desktop-menu">
                 <li>
-                    <Link to="/home" className="menu-item">Home</Link>
+                    <Link to="/" className="menu-item">Home</Link>
                 </li>
                 <li>
-                    <Link to="/question" className="menu-item">Question</Link>
+                    <Link to="/" className="menu-item">Hotels</Link>
                 </li>
                 <li>
-                    <Link to="/resources" className="menu-item">Resources</Link>
+                    <Link to="/" className="menu-item">Places</Link>
                 </li>
             </ul>
 
             <div className="sign-in-container">
-                <Link to="/Profile" className="sign-in">
+                <Link to="/" className="sign-in">
                     Sign In
                 </Link>
             </div>

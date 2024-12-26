@@ -1,10 +1,38 @@
 .hero-section {
+  position: relative; 
   background-image: url("https://raw.githubusercontent.com/gocomet-india/frontend-hotel-assignment/main/hero-bg.jpg"); /* Replace with actual image */
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position:10%;
   color: white;
-  text-align: center;
-  padding: 60px 20px;
+  text-align: left;
+  padding: 20px 20px 60px 20px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  
+}
+
+.hero-bg-tint {
+  position: absolute;
+  width: 100%;
+  height: 430px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5); 
+  z-index: 1; 
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  z-index: 2;
+  color: black; 
 }
 
 .hero-section h1 {
@@ -17,24 +45,34 @@
   margin-bottom: 20px;
 }
 
-.search-bar {
+.hero-search-bar {
+  z-index: 2;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   gap: 10px;
+  align-items: center;
+  position: relative;
   flex-wrap: wrap;
-  position: relative; /* Add relative positioning to the parent */
 }
 
-.search-input,
-.date-input,
-.num-persons-input {
+.hero-search-input,
+.hero-num-persons-input {
   padding: 10px;
   border: none;
   border-radius: 5px;
   width: 200px;
+  height: 20px; 
 }
 
-.search-btn {
+.hero-date-selector {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+  height: 20px;
+}
+
+.hero-search-btn {
   padding: 10px 20px;
   border: none;
   background-color: #007bff;
@@ -43,19 +81,18 @@
   cursor: pointer;
 }
 
-.search-btn:hover {
+.hero-search-btn:hover {
   background-color: #0056b3;
 }
 
-/* Suggestions box styling */
-.suggestions-list {
+.hero-suggestions-list {
   position: absolute;
-  top: 100%; /* Position directly below the input field */
-  left: 16%;
+  top: 100%;
+  left: 0;
   width: 15%;
-  max-height: 200px; /* Limit the height of the suggestions box */
+  max-height: 200px;
   overflow-y: auto;
-  background-color: white; /* White background for the suggestions box */
+  background-color: white;
   border: 1px solid #ccc;
   border-top: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -65,20 +102,75 @@
   list-style-type: none;
 }
 
-.suggestion-item {
+.hero-suggestion-item {
   padding: 10px;
   cursor: pointer;
   font-size: 16px;
-  color: black; /* Change text color to black */
+  color: black;
 }
 
-.suggestion-item:hover {
-  background-color: #f0f0f0; /* Highlight item on hover */
+.hero-suggestion-item:hover {
+  background-color: #f0f0f0;
 }
 
-.error {
+.hero-error {
   color: red;
   margin-top: 10px;
+}
+
+/* Date Selectors Styling */
+.hero-date-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 20%;
+  max-width: 500px;
+}
+
+.hero-date-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.hero-date-field input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-divider {
+  width: 1px;
+  height: 30px;
+  background-color: #ccc;
+  margin: 0 10px;
+}
+
+.hero-icon {
+  font-size: 18px;
+  color: #333;
+}
+
+.hero-num-persons-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-input-icon {
+  font-size: 18px;
+  color: #333;
 }
 
 @media (max-width: 768px) {
@@ -86,13 +178,13 @@
     font-size: 1.8rem;
   }
 
-  .search-bar {
+  .hero-search-bar {
     flex-direction: column;
   }
 
-  .search-input,
-  .date-input,
-  .num-persons-input {
+  .hero-search-input,
+  .hero-date-input,
+  .hero-num-persons-input {
     width: 100%;
   }
 }

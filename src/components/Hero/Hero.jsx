@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { FaCalendarAlt } from "react-icons/fa"; 
 import "./Hero.css";
 
 const Hero = () => {
@@ -76,56 +77,93 @@ const Hero = () => {
       item.city.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const getTodayDate = () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = (today.getMonth() + 1).toString().padStart(2, "0"); // Months are 0-based, so adding 1
+    const day = today.getDate().toString().padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  };
+
   return (
     <div className="hero-section">
-      <h1>Find the Perfect Deal, Always.</h1>
-      <p>Search for the best hotels and deals in your favorite destinations.</p>
-      <div className="search-bar">
-        <input
-          type="text"
-          placeholder="Type city, place, or hotel name"
-          className="search-input"
-          value={searchQuery}
-          onChange={handleSearchInputChange}
-        />
+      <div className="hero-bg-tint"></div>
+      <div className="hero-content">
+        <h1>Find the Perfect Deal, Always.</h1>
+        <p>Search for the best hotels and deals in your favorite destinations.</p>
+      </div>
+      <div className="hero-search-bar">
+        <div className="hero-search-input-container">
+          <input
+            type="text"
+            placeholder="Type city, place, or hotel name"
+            className="hero-search-input"
+            value={searchQuery}
+            onChange={handleSearchInputChange}
+          />
+        </div>
         {showSuggestions && searchQuery && filteredSuggestions.length > 0 && (
-          <ul className="suggestions-list">
+          <ul className="hero-suggestions-list">
             {filteredSuggestions.map((item, index) => (
               <li
                 key={index}
                 onClick={() => handleSuggestionClick(item)}
-                className="suggestion-item"
+                className="hero-suggestion-item"
               >
                 {item.name} ({item.city})
               </li>
             ))}
           </ul>
         )}
-        <input
-          type="date"
-          className="date-input"
-          value={checkInDate}
-          onChange={(e) => setCheckInDate(e.target.value)}
-        />
-        <input
-          type="date"
-          className="date-input"
-          value={checkOutDate}
-          onChange={(e) => setCheckOutDate(e.target.value)}
-        />
-        <input
-          type="number"
-          placeholder="Number of Persons"
-          className="num-persons-input"
-          min="1"
-          value={numPersons}
-          onChange={(e) => setNumPersons(e.target.value)}
-        />
-        <button className="search-btn" onClick={handleSearch}>
+
+        {/* Date Selectors */}
+        <div className="hero-date-selector">
+          <div className="hero-date-field">
+            <FaCalendarAlt className="hero-icon" />
+            <input
+              type="text"
+              className="hero-date-input"
+              value={checkInDate}
+              placeholder="Check-In"
+              onFocus={(e) => (e.target.type = "date")}
+              onBlur={(e) => (e.target.type = "text")}
+              onChange={(e) => setCheckInDate(e.target.value)}
+              min={getTodayDate()}
+            />
+          </div>
+          <div className="hero-divider"></div>
+          <div className="hero-date-field">
+            <FaCalendarAlt className="hero-icon" />
+            <input
+              type="text"
+              className="hero-date-input"
+              value={checkOutDate}
+              placeholder="Check-Out"
+              onFocus={(e) => (e.target.type = "date")}
+              onBlur={(e) => (e.target.type = "text")}
+              onChange={(e) => setCheckOutDate(e.target.value)}
+              min={getTodayDate()}
+            />
+          </div>
+        </div>
+
+        {/* Number of Persons */}
+        <div className="hero-num-persons-container">
+          <input
+            type="number"
+            placeholder="Number of Persons"
+            className="hero-num-persons-input"
+            min="1"
+            value={numPersons}
+            onChange={(e) => setNumPersons(e.target.value)}
+          />
+        </div>
+
+        <button className="hero-search-btn" onClick={handleSearch}>
           Search
         </button>
       </div>
-      {error && <p className="error">{error}</p>}
+      {error && <p className="hero-error">{error}</p>}
     </div>
   );
 };

@@ -55,7 +55,7 @@ const RoomCard = ({ name, price, capacity, images, hotelName, amenities, checkIn
         
         {showAmenities && (
           <div className="room-amenities">
-            <p>Amenities: {amenities.join(", ")}</p> {/* Display amenities as comma-separated list */}
+            <p>Amenities: {amenities.join(", ")}</p> 
           </div>
         )}
       </div>
