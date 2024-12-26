@@ -1,0 +1,25 @@
+.page-btn {
+  padding: 8px 12px;
+  margin: 40px 4px;
+  border: none;
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.page-btn:hover {
+  background-color: #ddd;
+}
+
+.page-btn:disabled {
+  cursor: not-allowed;
+  background-color: #e0e0e0;
+}
+
+.page-btn.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}

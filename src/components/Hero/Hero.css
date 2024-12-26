@@ -1,0 +1,98 @@
+.hero-section {
+  background-image: url("https://raw.githubusercontent.com/gocomet-india/frontend-hotel-assignment/main/hero-bg.jpg"); /* Replace with actual image */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  position: relative; /* Add relative positioning to the parent */
+}
+
+.search-input,
+.date-input,
+.num-persons-input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.search-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Suggestions box styling */
+.suggestions-list {
+  position: absolute;
+  top: 100%; /* Position directly below the input field */
+  left: 16%;
+  width: 15%;
+  max-height: 200px; /* Limit the height of the suggestions box */
+  overflow-y: auto;
+  background-color: white; /* White background for the suggestions box */
+  border: 1px solid #ccc;
+  border-top: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: black; /* Change text color to black */
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0; /* Highlight item on hover */
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .search-input,
+  .date-input,
+  .num-persons-input {
+    width: 100%;
+  }
+}

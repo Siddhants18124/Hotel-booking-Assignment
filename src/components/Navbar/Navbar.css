@@ -1,0 +1,136 @@
+/* Navbar Container */
+.navbar {
+  height: 4rem;
+  padding: 1rem 1rem;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Logo and Title */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-left: 1rem;
+}
+
+.site-title {
+  margin-left: 1rem;
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+/* Desktop Menu */
+.desktop-menu {
+  display: flex;
+  gap: 2rem;
+  color: black;
+  list-style: none;
+}
+
+.menu-item {
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  text-decoration: underline;
+}
+
+/* Profile Picture */
+.sign-in-container {
+  display: flex ;
+  margin-left: auto;
+  align-items: center;
+}
+.sign-in{
+  text-decoration: none;
+  color: black;
+}
+.sign-in:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Menu Icon */
+.mobile-menu-icon {
+  display: none;
+  align-items: center;
+  margin-left: auto;
+}
+
+.menu-toggle {
+  color: black;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  width: 15rem;
+  height: 100%;
+  background-color: #1e3a8a; /* Blue color */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2.5rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.close-menu {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: white;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu-item {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0.75rem 0;
+  text-decoration: none;
+  color: white;
+  transition: color 0.2s ease;
+}
+
+.mobile-menu-item:hover {
+  color: #2563eb; /* Lighter blue */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .desktop-menu {
+      display: none;
+  }
+
+  .sign-in-container {
+      display: none;
+  }
+
+  .mobile-menu-icon {
+      display: flex;
+  }
+}

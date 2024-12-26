@@ -1,0 +1,194 @@
+.room-card {
+  border: 2px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  width: 100%; /* Default width set to 100% for responsiveness */
+  max-width: 420px; /* Maximum width for larger screens */
+  padding: 10px;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.room-carousel {
+  position: relative;
+  width: 100%;
+  height: 250px; /* Reduced height for smaller screens */
+  overflow: hidden;
+}
+
+.room-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.room-info {
+  padding: 10px 0;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+}
+
+.room-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+}
+
+.room-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.room-capacity {
+  font-size: 1rem;
+  color: gray;
+  display: flex;
+  align-items: center;
+}
+
+.room-capacity svg {
+  margin-right: 5px;
+}
+
+.room-price {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.room-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap; /* Ensures buttons wrap on smaller screens */
+}
+
+.view-facilities-btn,
+.book-now-btn {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  width: calc(50% - 5px); /* Adjust width for responsiveness */
+  min-width: 120px; /* Ensures buttons are not too small */
+}
+
+.view-facilities-btn {
+  background-color: transparent;
+  color: #0A66BB;
+  border: 2px solid #0A66BB;
+  font-weight: bold;
+}
+
+.view-facilities-btn:hover {
+  background-color: #0A66BB;
+  color: white;
+}
+
+.book-now-btn {
+  background-color: #0A66BB;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-now-btn:hover {
+  background-color: #0056b3;
+}
+
+.book-now-btn::after {
+  content: ' →';
+  margin-left: 5px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .room-card {
+    max-width: 100%; /* Allow full width for smaller screens */
+    margin: 0 auto 15px; /* Center align cards */
+  }
+
+  .room-carousel {
+    height: 200px; /* Reduce height for smaller screens */
+  }
+
+  .room-header {
+    flex-direction: column; /* Stack name and capacity vertically */
+    align-items: flex-start;
+  }
+
+  .room-name {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+
+  .room-capacity {
+    font-size: 0.9rem; /* Adjust capacity font size */
+  }
+
+  .room-actions {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 8px; /* Adjust gap for vertical alignment */
+  }
+
+  .view-facilities-btn,
+  .book-now-btn {
+    width: 100%; /* Full width for buttons on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .room-carousel {
+    height: 150px; /* Further reduce carousel height for very small screens */
+  }
+
+  .room-name {
+    font-size: 0.9rem; /* Smaller font size */
+  }
+
+  .room-price {
+    font-size: 0.9rem;
+  }
+
+  .room-capacity {
+    font-size: 0.8rem;
+  }
+
+  .view-facilities-btn,
+  .book-now-btn {
+    font-size: 0.9rem; /* Smaller text size for buttons */
+    padding: 6px 10px; /* Reduce padding */
+  }
+}
